@@ -172,10 +172,10 @@ class IconAnimator {
         // based on the current time. This allows the animation
         // to continue smoothly even if some frames are dropped
         let timeSinceStart = CACurrentMediaTime() - animationStartTime
-        let currentFrame = Int(timeSinceStart * targetFramesPerSecond) % numberOfFrames
+        let currentFrame = Int(timeSinceStart * targetFramesPerSecond) % numberOfFrames + 1
 
         // Determine the name of the icon to show
-        let iconName = String(format: "BeachBall%03d", currentFrame);
+        let iconName = String(format: "resizedout%d", currentFrame);
 
         // Use `LSApplicationProxy.setAlternateIconName` to update
         // our icon (which allows us to skip the user-facing alert
